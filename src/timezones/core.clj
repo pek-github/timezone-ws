@@ -18,7 +18,7 @@
 (defn- convert-time
   "A helper function that implements the application logic of time conversion"
   [zone-id]
-  (str (java.time.ZonedDateTime/now (java.time.ZoneId/of zone-id))))
+  (-> zone-id java.time.ZoneId/of java.time.ZonedDateTime/now str))
 
 ; The interface to be implemented
 (definterface clock
